@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite Especial</title>
+<link rel="stylesheet" href="style.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .audio-permission {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1000;
+    }
+    .audio-permission button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      background: #1DB954;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="invitation-card">
+    <!-- Decoração de fundo -->
+    <div class="hearts">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <h1>Oi, <span class="name">Flávia</span>! <span class="heart-icon">❤️</span></h1>
+
+    <div class="message">
+      <p>Eu tenho pensado muito nisso...</p>
+      <p>Você quer sair comigo para <span class="highlight">ir no cinema</span>?</p>
+    </div>
+
+    <!-- Botões de resposta -->
+    <div class="response-buttons">
+      <button id="yes-btn" class="btn pulse">Sim</button>
+      <button id="no-btn" class="btn pulse no-btn">Não</button>
+    </div>
+
+    <!-- Sequência de confirmação -->
+    <div id="question-sequence" class="question-box hidden">
+      <p id="question-text">Tem certeza? 🥺</p>
+      <button id="next-question-btn" class="btn">Confirmar</button>
+    </div>
+
+    <!-- Mensagem final -->
+    <div id="confirmation" class="hidden">
+      <p class="celebration">Confirmado! ❤️</p>
+      <p class="celebration-sub">Mal posso esperar pelo nosso encontro!</p>
+    </div>
+
+    <br>
+    
+    <!-- Player de música -->
+    <div class="music-player">
+      <button id="music-btn" class="music-btn">
+        <span class="music-icon">♫</span> Thinking Out Loud - Ed Sheeran
+      </button>
+      <audio id="audio-player" loop>
+        <source src="Ed Sheeran - Thinking out Loud.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+
+  <!-- Aviso de permissão de áudio -->
+  <div id="audio-permission" class="audio-permission">
+    <p>Clique para ativar a música 🎵</p>
+    <button id="enable-audio">Ativar Som</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
